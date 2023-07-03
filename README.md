@@ -1,5 +1,7 @@
 # valmail
-a GoLang email validator
+[![codecov](https://codecov.io/gh/haukened/valmail/branch/main/graph/badge.svg?token=ZBN2N8O8XV)](https://codecov.io/gh/haukened/valmail)
+
+a GoLang email validator that allows projects to validate emails for free - instead of using pay-to-play SAAS options.
 
 ## Project Goals and Status
 
