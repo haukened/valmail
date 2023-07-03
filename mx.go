@@ -16,6 +16,7 @@ func (e *EmailAddress) populateMX() error {
 	}
 	// check if they are nil or zero length
 	if len(mxRecords) == 0 {
+		// this should never happen because populateMX should return "no such server"
 		return err
 	} else {
 		// if they exist store them in case we need them later

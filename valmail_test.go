@@ -2,20 +2,7 @@ package valmail
 
 import (
 	"testing"
-
-	"github.com/haukened/valmail/internal/dea"
 )
-
-func TestIsDEA(t *testing.T) {
-	known_dea := "10minutemail.com"
-	known_good := "gmail.com"
-	if dea.IsDEA(known_good) {
-		t.Fatalf("%s is not a DEA", known_good)
-	}
-	if !dea.IsDEA(known_dea) {
-		t.Fatalf("%s should have been DEA", known_dea)
-	}
-}
 
 func TestParse(t *testing.T) {
 	good_email := "david@hauken.us"
@@ -28,5 +15,23 @@ func TestParse(t *testing.T) {
 	}
 	if e.Domain != "hauken.us" {
 		t.Fatalf("domain should have been hauken.us, got %s", e.Domain)
+	}
+}
+
+func TestInvalidSyntax(t *testing.T) {
+	e := Parse("foo.com")
+	if e.SyntaxValid {
+		t.Fatalf("this email should not be valid, as it has no username")
+	}
+}
+
+func TestIsDEA(t *testing.T) {
+	good := Parse("noreply@gmail.com")
+	bad := Parse("foo@10minutemail.com")
+	if good.IsDEA() {
+		t.Fatalf("%s should not be DEA", good.Domain)
+	}
+	if !bad.IsDEA() {
+		t.Fatalf("%s should be DEA", bad.Domain)
 	}
 }
