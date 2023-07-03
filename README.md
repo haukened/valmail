@@ -11,7 +11,7 @@ a GoLang email validator that allows projects to validate emails for free - inst
 | ✅ | Syntax Validation | Is the address syntactically valid? | ValidSyntax | Boolean |
 | ✅ | MX Record Validation | Does the domain of the email have valid MX records in DNS? | MXValid | Boolean |
 | ✅ | Disposable Email Address (DEA) Validation | Is the address provided by a known disposable email address provider? | IsDisposable | Boolean |
-| 🛠️ | SMTP Server Validation | Is an email sent to this address deliverable? | SMTPValid | Boolean |
+| ✅ | SMTP Server Validation | Can this SMTP server be reached and handshake? | SMTPValid | Boolean |
 | 🛠️ | Mailbox Disabled | Has this address been disabled by the email provider? | IsDisabled | Boolean |
 | 🛠️ | Full Inbox | Is the inbox of this mailbox full? | HasFullInbox | Boolean |
 | 🛠️ | Catch-All Address | Is this email a catch all address? | IsCatchAll | Boolean |
