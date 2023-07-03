@@ -20,5 +20,6 @@
 # Go workspace file
 go.work
 
-# VS Code stuff
+# VS Code stuff and github stuff
 .vscode
+.github
